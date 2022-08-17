@@ -1,0 +1,326 @@
+        /* 760PX */
+
+    /* MEDIA QUERY CABEÇALHO */
+
+    @media(max-width: 760px){
+        header{
+            justify-content: end;
+            gap: 4rem;
+            height: 73px; 
+        }
+
+        #menu{
+            display: block;
+            position: absolute;
+            width: 100%;
+            top: 73px;
+            left: 0;
+            height: 0;
+
+            background-color: var(--azul);
+            visibility: hidden;
+            overflow: hidden;
+            z-index: 3000;
+            
+            transition: 600ms;
+        }
+
+        #nav.active #menu{
+            display: block;
+            height: 223px;
+            overflow: auto;
+            
+            visibility: visible;
+        }
+
+        #menu a{
+            padding: 0.8rem;
+            font-size: 1.3rem;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+        }
+
+        #btn-header{
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+
+            margin-right: 20px;
+            border: none;
+            padding: 0.5rem;
+            cursor: pointer;
+            
+            background-color: transparent;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        #btn-burguer{
+            width: 24px;
+            border-top: 3px solid white;
+            border-radius: 3px;
+
+            transition: 200ms;
+        }
+
+        #btn-burguer::after, #btn-burguer::before{
+            content: '';
+            display: block;
+            position: relative;
+
+            height: 3px;
+            margin-top: 4px;
+            border-radius: 10px;
+            background-color: currentColor;
+
+            transition: 200ms;
+        }
+
+        #nav.active ~ #btn-header > #btn-burguer::after{
+            background-color: transparent;
+        }
+    
+        #nav.active ~ #btn-header > #btn-burguer::before{
+            background-color: transparent;
+        }
+    
+        #nav.active ~ #btn-header > #btn-burguer{
+            height: 20px;
+            border: 3px solid white;
+            border-radius: 50%;
+        }
+    }
+
+    /* MEDIA QUERY PAGINA INICIAL */
+
+    @media (max-width: 760px){
+        #container-main{
+            flex-direction: column;
+            padding: 0;
+        }
+
+        #perfil{
+            width: 250px;
+            height: 250px;
+        }
+
+        #container-main-txt{
+            text-align: center;
+            font-size: 1.7rem;
+        }
+
+        #container-main-txt p{
+            margin-top: 10px;
+            font-size: 1.5rem;
+            text-indent: 0;
+        }
+    }
+
+    /* MEDIA QUERY SOBRE MIM */
+
+    @media(max-width: 760px){
+        #sobre-mim{
+            align-items: center;
+            padding-bottom: 20px;
+        }
+
+        #container-sobre-mim{
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+            width: 100%;
+            max-width: 90%;
+            padding: 20px 0;
+
+            font-size: 1.2rem;
+        }
+
+        #retrato{
+            width: 250px;
+            height: 250px;
+        }
+
+        .redes{
+            width: 60px;
+            height: 60px;
+        }
+
+        #midias-sociais{
+            min-width: 180px;
+            width: 100%;
+            max-width: 260px;
+            margin: 10px;
+        }
+    }
+
+        /* MEDIAS QUERYS SKILLS */
+
+    /* PRIMEIRA MEDIA QUERY SKILLS */
+
+    @media (max-width: 760px){
+        div#grid-skills{
+            min-width: 0;
+            width: 90%;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        div#grid-skills div.grid-item{
+            grid-row: auto;
+            grid-column: auto;
+            flex-direction: row;
+
+            min-width: none;
+            width: 90%;
+            min-height: 0;
+            height: 200px;
+            margin: auto;   
+            font-size: 3rem;
+        }
+        
+        #skill-css > img, #skill-html > img, #skill-git > img{
+            width: 180px;
+        }
+
+        #skill-javascript > img, #skill-photoshop > img{
+            width: 150px;
+        }
+
+        div#grid-skills div.grid-item > img{
+            height: auto;
+        }     
+    }
+
+    /* SEGUNDA MEDIA QUERY SKILLS */
+
+    @media (max-width: 545px){
+        #skills h2{
+            font-size: 2.5rem;
+            margin: 50px 0;
+        }
+
+        #grid-skills{
+            min-width: 0;
+            max-width: 90%;
+            padding-left: 3%;
+        }
+
+        div#grid-skills div.grid-item{
+            padding: 1rem;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 2rem;
+        }
+
+        #skill-javascript > img, #skill-photoshop > img{
+            min-height: 0;
+            width: 120px;
+         }
+
+        div#grid-skills #skill-html img,
+        div#grid-skills #skill-css img,
+        div#grid-skills #skill-git img{
+            width: 150px;
+            min-height: 0;
+         }
+    }
+
+    /* PRIMEIRA MEDIA QUERY CONTATE-ME */
+
+    @media (max-width: 760px){
+        #inputEmail{
+            max-width: 95%;
+        }
+
+       textarea{
+            max-width: 95%;
+       }
+
+       #btn-enviar{
+            right: 4%;
+       }
+
+        #btn-email{
+            font-size: 1.8rem;
+        }
+
+        #btn-email.mudarElm{
+            display: none;
+        }
+
+    }
+
+    /* SEGUNDA MEDIA QUERY CONTATE-ME */
+
+    @media (min-width: 2000px){
+
+        #container-contate{
+            height: 500px;
+        }
+
+        #btn-email{
+            max-width: 600px;
+            height: 130px;
+            font-size: 4em;
+        }
+
+        #btn-email.mudarElm{
+            visibility: hidden;
+        }
+
+        #contate.cont-trans-s{
+            max-height: 800px;
+        }
+
+        #container-contate.cont-trans-c{
+            max-width: 2000px;
+            height: 800px;
+        }
+
+        #contate-form-div-txt{
+            max-width: 1200px;
+            height: 400px;
+        }
+
+        textarea{
+            max-width: 100%;
+            height: 400px;
+            border: none;
+
+            font-size: 3rem;
+        }
+
+        #contate-form-div-email{
+            max-width: 1200px;
+        }
+
+        #inputEmail{
+            max-width: 100%;
+            height: 3.5rem;
+            font-size: 3rem;
+        }
+
+        #btn-enviar{
+            width: 80px;
+            height: 60px;
+            font-size: 3rem;
+        }
+
+        .translacaoTxt{
+            transform: translateY(80px);
+        }
+
+        .placeH{
+            font-size: 2.5rem;
+        }
+
+        #inputEmail:focus ~ .placeH,
+        textarea:focus ~ .placeH,
+        #inputEmail:valid ~ .placeH,
+        textarea:valid ~ .placeH{
+            transform: translateY(-60px) translateX(-2px);
+            opacity: 1;
+            color: white;
+            font-weight: 500;
+            font-size: 2rem;
+        }
+    }

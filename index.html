@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="midias/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsivo.css">
+    <title>Portfolio</title>
+</head>
+<body>
+
+        <!-- FONTES -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet">
+
+
+        <!-- CABEÇALHO -->
+
+    <header>
+        <nav id="nav">
+            <ul id="menu">
+                <li><a href="#menu">Início</a></li>
+                <li><a href="#sobre-mim">Sobre mim</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contate">Contate-me</a></li>
+            </ul>
+        </nav>
+        
+        <button id="btn-header">Menu
+            <span id="btn-burguer"></span>
+        </button>
+    </header>
+    
+
+        <!-- PAGINA INICIAL -->
+
+    <main id="main">
+        <div id="container-main">
+            <img id="perfil">
+
+            <div id="container-main-txt">
+                <h1 id="nome">Guilherme Oliveira</h1>
+                <p>Front-end Developer</p>      
+            </div>
+        </div>
+    </main>
+
+
+        <!-- SOBRE MIM -->
+
+    <section id="sobre-mim">
+        <div id="container-sobre-mim">
+            <p class="slider left">
+                Olá, meu nome é Guilherme! Eu tenho 18 anos e sou estudante de programação, atualmente 
+                faço Análise e Desenvolvimento de Sistemas pela faculdade Anhanguera, e almejo ser um desenvolvedor Full Stack;
+                Tenho aproximadamente 4 anos de convívio e experiência com programação, estando já
+                acostumado com a área e similares. Sempre me atualizando e procurando melhorar!
+            </p>
+
+            <img class="slider right" id="retrato" src="midias/retrato.png" alt="Autorretrato meu em pixel-art">
+        </div>
+
+        <div id="midias-sociais">
+            <a href="https://github.com/Draxwell0" target ="_blank" rel="external"><img class="redes" src="midias/github-icon.png" alt="Icone githHub"></a>
+            <a href="https://www.linkedin.com/in/guilherme-oliveira-melo-327243224/" target="_blank" rel="external"><img class="redes" src="midias/linkedin-icon.png" alt="Icone linkedIn"></a>
+        </div>
+    </section>
+
+
+        <!-- HABILIDADES -->
+
+    <div id="particles-js">
+        <section id="skills">
+            <h2>Minhas habilidades</h2>
+
+            <div id="grid-skills">
+                <!-- HTML -->
+                <div class="grid-item" id="skill-html">
+                    <img class="colorido invisivel" src="./midias/html-icon.png" alt="Icone HTML">
+                    <img class="skill-image" src="./midias/html-icon-modificado.png" alt="Icone HTML modificado">
+                    <p>HTML</p>               
+                </div>
+
+                <!-- CSS -->
+                <div class="grid-item" id="skill-css">      
+                    <img class="colorido invisivel" src="./midias/css-icon.png" alt="Icone CSS">
+                    <img class="skill-image" src="./midias/css-icon-modificado.png" alt="Icone CSS modificado">              
+                    <p>CSS</p>               
+                </div>
+
+                <!-- JAVASCRIPT -->
+                <div class="grid-item" id="skill-javascript">
+                    <p>Javascript</p>
+                    <img class="colorido invisivel" src="./midias/javascript-icon.png" alt="Icone Javascript">
+                    <img class="skill-image" src="./midias/javascript-icon-modificado.png" alt="Icone Javascript modificado">       
+                </div>
+
+                <!-- GIT -->
+                <div class="grid-item" id="skill-git">                  
+                    <img class="colorido invisivel" src="./midias/git-icon.png" alt="Icone Git">
+                    <img class="skill-image" src="./midias/git-icon-modificado.png" alt="Icone Git modificado">                  
+                    <p>Git</p>              
+                </div>
+
+                <!-- PHOTOSHOP -->
+                <div class="grid-item" id="skill-photoshop"> 
+                    <img class="colorido invisivel" src="./midias/photoshop-icon.png" alt="Icone Photoshop">
+                    <img class="skill-image" src="./midias/photoshop-icon-modificado.png" alt="Icone Photoshop modificado">
+                    <p>Photoshop</p>              
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+        <!-- CONTATE-ME -->
+
+    <section id="contate">
+        <div id="container-contate">
+
+            <form id="contate-form" action="https://formsubmit.co/64723cc01c919486d6ea2771edf0e0e1" method="POST">
+                <button id="btn-email">Contate-me</button>
+
+                <div id="contate-form-div-email">
+                    <input type="text" id="inputEmail" name="email" required>
+                    <span class="placeH" id="span-email">Email</span>
+                </div>
+
+                <div id="contate-form-div-txt">    
+                    <textarea id="txt" name="message" required></textarea>
+                    <span class="placeH" id="span-txt">Mensagem</span>
+
+                    <button id="btn-enviar">&rightarrow;</button>          
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+        <!-- FOOTER -->
+
+    <footer></footer>
+
+        <!-- SCRIPTS -->
+    
+    <script src="script.js"></script>
+    <script src="./bibliotecas/particles.js"></script>
+    <script src="./bibliotecas/js/app.js"></script>
+
+</body>
+</html>

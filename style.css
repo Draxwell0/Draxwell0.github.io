@@ -1,0 +1,610 @@
+@charset "UTF-8";
+
+        /* FORMATAÇÃO PRINCIPAL */
+
+    *{
+        margin: 0;
+        padding: 0;
+    }
+
+    html{
+        scroll-behavior: smooth;
+    }
+
+    body{
+        background-color: white;
+        font-family: 'Roboto Slab', sans-serif;
+    }
+
+    :root{
+        --azul: #00658C;
+        --azul-escuro: #002E40;
+    }
+
+
+        /* DESIGN SCROLL */
+
+    html::-webkit-scrollbar{
+        width: 15px;
+    }
+
+    html::-webkit-scrollbar-track{
+        background-color: lightgray;
+    }
+
+    html::-webkit-scrollbar-thumb{
+        background-color: var(--azul-escuro);
+        border: 2px solid white;
+        border-radius: 10px;
+    }
+
+    html::-webkit-scrollbar-thumb:active{
+        background-color: white;
+        border: 2px solid var(--azul-escuro);
+    }
+
+
+        /* DESIGN CABEÇALHO */
+
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        height: 12vh;
+        padding: 0.8rem;
+        box-sizing: border-box;
+        background-color: var(--azul-escuro);
+
+        overflow: hidden;
+    }
+
+    #menu{
+        display: flex;
+        list-style: none;
+    }
+
+    #menu a{
+        display: block;
+        padding: 1.6rem 1.4rem;
+
+        color: white;
+        text-decoration: none;
+        font-size: calc(0.4rem + 1.5vw);
+
+        transition: 100ms ease-in-out;
+    }
+
+    #menu a:hover {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    #btn-header{
+        display: none;
+    }
+
+
+        /* PAGINA INICIAL */
+
+    #main{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 560px;
+        height: calc(100vh - 73px);
+
+        background-color: white;
+    }
+
+    #container-main{
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        min-height: fit-content;
+        margin: auto;
+        padding: 1rem;
+    }
+
+    #perfil{
+        height: 40vh;
+        border-radius: 50%;
+
+        background-color: black;
+        box-shadow: 0 0 130px rgba(0, 0, 0, 0.5);
+        border: 3px solid black;
+    }
+
+
+    #container-main-txt {
+        font-weight: 300;
+        font-size: calc(0.5rem + 1.6vw);
+    }
+
+    #nome::after{
+        content: '|';
+        margin-left: 2px;
+        font-weight: normal;
+        opacity: 1;
+
+        animation: blink 700ms infinite;
+    }
+
+    @keyframes blink{
+        0%,100%{opacity: 1;}
+        50%{opacity: 0;}
+    }
+
+    #container-main-txt p{
+        font-size: calc(0.5rem + 1.5vw);
+        font-weight: normal;
+        text-indent: 20px;
+    }
+
+
+        /* SOBRE MIM */
+
+    #sobre-mim{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-height: 100vh;
+        box-sizing: border-box;
+
+        background-color: var(--azul-escuro);
+        border-top: 2px solid black; 
+        border-bottom: 3px solid black; 
+    }
+
+    #container-sobre-mim{
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 80%;
+        padding: 2rem;
+        gap: 70px;
+        margin: auto;
+
+        color: white;
+        text-indent: 30px;
+        text-align: center;
+        font-size: calc(0.5rem + 1.3vw);
+        line-height: 1.5;
+
+        overflow: hidden;
+    }
+
+    #retrato{
+        width: 45vh;
+        height: 45vh;
+        border-radius: 50px;
+        border: 6px solid black;
+    }
+
+    .redes{
+        height: 11vh;
+        cursor: pointer;
+
+        transition: 150ms ease-out;
+    }
+
+    .redes:hover{
+        transform: scale(1.05) translateY(-7px);
+    }
+
+    #midias-sociais{
+        display: flex;
+        justify-content: space-around;
+        width: 30vw;
+        padding-bottom: 3px;
+        border-radius: 5px;
+        margin: auto;
+
+        border-bottom: 3px solid white;
+    }
+
+
+    /* ANIMAÇÃO SCROLL REVEAL SOBRE MIM  */
+
+    .left{
+        transform: translateX(-40%);
+    }
+
+    .right{
+        transform: translateX(40%);
+    }
+
+    .left, .right{
+        opacity: 0;
+        transition: opacity 300ms ease-in, transform 200ms ease-in; 
+    }
+
+    .appear{
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+
+        /* SKILLS */
+
+    #particles-js{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+
+    #skills{
+        width: 100%;
+        position: absolute;
+    }
+
+    #skills h2{
+        text-align: center;
+        margin: 50px;
+        font-size: 3rem;
+    }
+
+    /* GRID DAS SKILLS */
+
+    #grid-skills{
+        min-width: 720px;
+        width: 80vw;
+        max-width: 2000px;
+        padding: 20px;
+        margin: auto;
+
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+    }
+
+    .grid-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 100px;
+        
+        width: 200px;
+        min-height: 200px;
+        height: 20vh;
+        border-radius: 10px;
+        user-select: none;
+        
+        background-color: var(--azul-escuro);
+        color: white;
+        border: 4px solid black;
+        font-size: calc(0.5rem + 2vw);
+    }
+
+    .grid-item:nth-child(1){
+        grid-column: 1 / 4;
+        width: 100%;
+        min-height: 300px;
+        height: 30vh;
+    }
+
+    .grid-item:nth-child(2){
+        grid-column: 4 / 6;
+        grid-row: 1 / 3;
+        width: 100%;
+        height: 98.6%;
+    }
+
+    .grid-item:nth-child(3){
+        grid-column: 1 / 4;
+        width: 100%;
+    }
+
+    .grid-item:nth-child(4){
+        grid-column: 1 / 3;
+        width: 100%;
+    }
+
+    .grid-item:nth-child(5){
+        grid-column: 3 / 6;
+        width: 100%;
+    }
+
+    /* DESIGN ITENS DA GRID */
+
+    /* HTML */
+    #skill-html{
+        gap: 0;
+        font-size: calc(3rem + 0.5vw);
+    }
+
+    #skill-html > img{
+        height: 230px;
+        min-height: 80%; 
+    }
+    
+    /* CSS */
+    #skill-css{
+        flex-direction: column;
+        gap: 30px;
+        font-size: calc(3rem + 0.5vw);
+    }
+    
+    #skill-css > img{
+        height: 270px;
+        min-height: 50%; 
+    }
+    
+    /* JAVASCRIPT */
+    #skill-javascript{
+        font-size: calc(2rem + 0.5vw);
+        gap: 50px; 
+    }
+
+    #skill-javascript > img{
+        height: 150px;
+        min-height: 80%; 
+    }
+
+    /* GIT */
+    #skill-git{
+        gap: 20px;
+        font-size: calc(2rem + 0.5vw);
+    }
+
+    #skill-git > img{
+        height: 180px;
+        min-height: 80%; 
+    }
+
+    /* PHOTOSHOP */
+    #skill-photoshop{
+        font-size: calc(2rem + 0.5vw);
+        gap: 50px; 
+    }
+
+    #skill-photoshop > img{
+        height: 150px;
+        min-height: 80%; 
+    }
+
+    /* EVENTO COM MOUSE */
+
+    .invisivel{
+        display: none;
+    }
+    
+    .grid-item > img:nth-child(2){
+        animation: fade 500ms;
+    }
+
+    .active {
+        display: block;
+        animation: fade 500ms
+    }
+
+    @keyframes fade {
+        from{
+            opacity: 0.2;
+        }to {
+            opacity: 1;
+        }
+    }
+
+    
+        /* CONTATE-ME */
+
+    /* CONTAINERS E CAIXAS*/
+
+    #contate{
+        width: 100%;
+        height: 100%;
+        max-height: 1000px;
+
+        background-color: var(--azul-escuro);
+        border-top: 3px solid black;
+
+        transition: 1200ms ease-out;
+    }
+
+    #container-contate{
+        width: 90%;
+        max-width: 500px;
+        height: 200px; 
+        margin: auto;
+
+        transition: 1200ms ease-out;
+    }
+    
+    #contate-form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        width: 100%;
+        height: 100%;
+
+        transition: 700ms ease; 
+    }
+
+    #contate.cont-trans-s{
+        max-height: 600px;
+    }
+
+    #container-contate.cont-trans-c{
+        max-width: 700px;
+        height: 400px;
+    }
+
+    /* BOTÕES */
+
+    /* BOTÃO DE TRANSIÇÃO */
+
+    #btn-email{
+        position: relative;
+        width: 90%;
+        max-width: 260px;
+        height: 80px;
+        padding: 15px;
+        cursor: pointer;
+        border: 3px solid white;
+        
+        color: white;
+        font-size: 2.2rem;
+        font-weight: bold;
+        border-radius: 20px;
+        background-color: var(--azul-escuro);
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+        z-index: 500;        
+        
+        transition: max-width 1200ms ease-in-out,
+            height 1200ms ease-in-out,
+            background-color 1500ms ease-out,
+            border-radius 1200ms ease-in,
+            opacity 500ms ease-out,
+            border 1200ms ease-out,
+            transform 200ms ease-out;
+    }
+
+    #btn-email:hover{
+        transform: scale(1.05);
+    }
+
+    #btn-email.mudarElm{
+        position: absolute;
+        max-width: 460px;
+        height: 216px;
+        border-radius: 5px;
+        cursor: default;
+        background-color: white;
+
+        transform: scale(1) translateX(6px);
+    }
+
+    /* BOTÃO ENVIAR EMAIL */
+
+    #btn-enviar{
+        visibility: hidden;
+        position: absolute;
+        bottom: 12px;
+        right: 0;
+        padding: 0 6px 3px 6px;
+        border: none;
+        opacity: 0;
+        cursor: pointer;
+
+        background-color: var(--azul-escuro);
+        color: white;
+        border-radius: 5px;
+        font-size: 1.3rem;
+
+        transition: 200ms ease;
+    }
+
+    #btn-enviar:hover{
+        transform: scale(1.15);
+    }
+
+    /* TEXT AREAS */
+
+    /* MENSAGEM */
+
+    #contate-form-div-txt{
+        display: none;
+        position: relative;
+
+        width: 90%; 
+        max-width: 450px;
+        height: 216px;
+    }
+
+    textarea{
+        width: 100%; 
+        max-width: 450px;
+        height: 200px;
+        padding: 5px;
+        border-radius: 5px;
+        resize: none;
+        
+        font-size: 1.2rem;
+        overflow: hidden;
+        z-index: 500;
+
+        transition: 500ms;        
+    }
+
+    /* EMAIL */
+
+    #contate-form-div-email{
+        position: relative;
+        display: none;
+
+        width: 90%;
+        max-width: 450px;
+        height: 38px;
+    }
+
+    #inputEmail{
+        width: 100%;
+        max-width: 454px;
+        height: 1.8rem;
+        padding: 2px;
+        padding-left: 4px;
+        border-radius: 5px;
+        
+        font-size: 1.2rem;
+        border: 2px solid var(--azul-escuro);
+        
+        transition: 500ms ease;
+        animation: fade 500ms ease-out;
+    }
+    
+    /* SPAN/PLACEHOLDER */
+    
+    .translacaoTxt{
+        transform: translateY(30px);
+        transition: 400ms;
+    }
+
+    .placeH{
+        position: absolute;
+        left: 0px;
+        top: 7px;
+        opacity: 0.7;
+        margin-left: 6px;
+        pointer-events: none;
+
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        transition: 300ms ease;
+        animation: spanFade 300ms;
+    }
+
+    @keyframes spanFade{0%{opacity: 0;}100%{opacity: 0.7;}}
+
+    /* VALIDAÇÃO ANIMAÇÃO PLACEHOLDER E BOTÃO */
+
+    #inputEmail:focus ~ .placeH,
+    textarea:focus ~ .placeH,
+    #inputEmail:valid ~ .placeH,
+    textarea:valid ~ .placeH{
+        transform: translateY(-34px) translateX(-2px);
+        opacity: 1;
+        color: white;
+        font-weight: 500;
+        font-size: 1.1rem;
+    }
+
+    textarea:valid ~ #btn-enviar{visibility: visible; opacity: 1;}
+
+    
+        /* FOOTER */
+
+    footer{
+        box-sizing: border-box;
+        text-align: center;
+        height: 50px;
+        padding-top: 15px;
+
+        border-top: 2px solid white;
+        background-color: black;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: normal;
+    }
